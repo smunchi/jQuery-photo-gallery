@@ -1,8 +1,10 @@
 (function($) {
-    $.fn.simpleGallery = function() {
-          $('.thumbnail').addClass('showThumb').addClass('fancybox').attr('rel', 'group');
+    $.fn.simpleGallery = function(options) {
+          var thumb = options.thumbElement;
+
+          $(thumb).addClass('showThumb').addClass('fancybox').attr('rel', 'group');
           function showImage() {
-                 $('a.fancybox[rel="group"]').fancybox({
+                 $(thumb).fancybox({
                       'transitionIn' : 'elastic',
                       'transitionOut' : 'elastic',
                       'titlePosition' : 'over',
